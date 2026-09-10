@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: Copyright (c) 2016-2026 Objectionary.com
+# SPDX-License-Identifier: MIT
+---
+# yamllint disable rule:line-length
+# #8611: the cactus half of the gate keeps its own wording once the binding
+# label reads the whole gate instead of half of it.
+sheets: []
+asserts:
+  - /object/errors/error[contains(text(),'cactus emoji is reserved for auto-names')]
+input: "[] > main\n  foo bar:go🌵od > result\n"

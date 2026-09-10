@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: Copyright (c) 2016-2026 Objectionary.com
+# SPDX-License-Identifier: MIT
+---
+# yamllint disable rule:line-length
+# #8611: the glyph gate speaks before the label grammar does, so a slot number
+# holding a control character names the character rather than the grammar.
+sheets: []
+asserts:
+  - /object/errors/error[contains(text(),'control character is not allowed in an identifier')]
+input: "[] > main\n  foo bar:1\f2 > result\n"

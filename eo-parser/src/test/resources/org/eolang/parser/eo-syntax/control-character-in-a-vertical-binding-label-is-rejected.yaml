@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: Copyright (c) 2016-2026 Objectionary.com
+# SPDX-License-Identifier: MIT
+---
+# yamllint disable rule:line-length
+# #8611: the outer binding of a vertical formation spells the same label
+# grammar as an inline one, so it reads the same glyph gate.
+sheets: []
+asserts:
+  - /object/errors/error[contains(text(),'control character is not allowed in an identifier')]
+input: "[] > main\n  x > y\n    []:sl\fot > named\n"

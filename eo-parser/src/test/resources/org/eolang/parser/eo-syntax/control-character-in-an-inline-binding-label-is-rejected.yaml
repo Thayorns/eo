@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: Copyright (c) 2016-2026 Objectionary.com
+# SPDX-License-Identifier: MIT
+---
+# yamllint disable rule:line-length
+# #8611: an inline binding label lands in an `as` attribute, so a control
+# character inside it used to abort the parse with an IllegalArgumentException
+# carrying neither a line nor a position.
+sheets: []
+asserts:
+  - /object/errors/error[contains(text(),'control character is not allowed in an identifier')]
+input: "[] > main\n  foo bar:go\fod > result\n"
